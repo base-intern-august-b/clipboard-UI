@@ -119,6 +119,9 @@ header{
 .message_title{
     display: flex;
 }
+.ping_span{
+    margin-left: 60px;
+}
 .message_text{
     font-size: large;
 }
