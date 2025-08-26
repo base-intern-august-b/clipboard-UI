@@ -97,7 +97,7 @@ function clipmes(){
 
 // 要素を取得
 var modal = document.getElementById("myModal");
-var btn = document.getElementById("modal_btn");
+var btn = document.getElementById("make_channel_modal");
 var span = document.getElementsByClassName("close")[0];
 
 // ボタンをクリックするとモーダルを開く
