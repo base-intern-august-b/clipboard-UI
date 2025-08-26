@@ -7,6 +7,7 @@
     <title>My Web Page</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="channel_control.js" defer></script>
 </head>
 
 <body onload=channel_list(get_channel_num())>
@@ -33,7 +34,7 @@
         </div>
     </div>
 
-    <vid id="main_area">
+    <div id="main_area">
         <div id="channel_area">
             <div id="channel_list">
                 <div id="channel_list_title">チャンネル一覧</div>
@@ -51,19 +52,26 @@
                         <textarea id="input_area" placeholder="メッセージを入力"></textarea>
                         <button onclick=sendmess(input_area.value) id="send_btn">送信</button>
                     </div>
+                    <!-- 検索窓（中央チャンネル表示欄用）をここに移動 -->
+                    <div id="channel_search_box" style="display:none; background:#eee; padding:8px; margin-bottom:8px;">
+                        <input type="text" placeholder="チャンネル内検索" style="width:95%;height:30px;font-size:16px;">
+                    </div>
                 </div>
             </div>
         </div>
         <div id="clips_area">
             <div id="clipboard">
                 <div>クリップボード</div>
-                <div id="clips"></div>
+                <!-- クリップボード用検索窓 -->
+                <div id="clipboard_search_box" style="background:#eee; padding:8px; margin-bottom:8px;">
+                    <input type="text" placeholder="クリップボード検索" style="width:95%;height:30px;font-size:16px;">
+                </div>
+                 <div id="clips"></div>
             </div>
             <div id="mybord">
                 <p id="mybord_title">メモ</p>
                 <textarea id="mybord_input" type="text"></textarea>
         </div>
-    </vid>
+    </div>
 </body>
-
 </html>
