@@ -34,12 +34,32 @@ function get_channel_name(){
     return channel_list;
 }
 
+function get_channel_id(channel_id){
+    fetch("/channels") // リクエストを送信
+        .then((response) => response.json())
+        .then((data) => {
+            return data[channel_id].channel_id
+    });
+}
+
+function get_messgae(channel_id){
+    const mes_data=[];
+    fetch(`/channels/${channel_id}/messages`) // リクエストを送信
+        .then((response) => response.json())
+        .then((data) => {
+            for(let i=0;i<data.length; i++)
+                mes_data.push(data[i].nessage);
+    });
+    return mes_data;
+}
+
 function channel_list(num) {
     const channel_list = get_channel_name()
     for (i = 0; i < num; i++) {
         let tag = document.createElement("div");
         tag.innerHTML = channel_list[i];
-        tag.setAttribute("onclick", "display_mes_clear(),display_mes(this.innerHTML,10)");
+        tag.id(i);
+        tag.setAttribute("onclick", "display_mes_clear(),display_mes(this.innerHTML,this.id)");
         const parent = document.getElementById("channel_list");
         parent.appendChild(tag);
     }
@@ -75,14 +95,16 @@ function display_mes_clear() {
     parent.appendChild(tag);
 }
 
-function display_mes(channel_title, mes_len) {
+function display_mes(channel_title, channel_id) {
     let tag = document.createElement("div");
     let parent = document.getElementById("messages");
     tag.id = "mes_channel_title";
     tag.innerHTML = channel_title;
     parent.appendChild(tag);
     
-    for (let i = 1; i < mes_len+1; i++) {
+    const mes_data = get_messgae(get_channel_id(channel_id));
+
+    for (let i = 1; i < mes_data+1; i++) {
         tag = document.createElement("div");
         tag.classList.add("messagebox");
         tag.id = i;
@@ -109,7 +131,7 @@ function display_mes(channel_title, mes_len) {
 
         tag = document.createElement("div");
         tag.classList.add("message_text");
-        tag.innerHTML = "testtext" + i;
+        tag.innerHTML = mes_data[i-1];
         parent = document.getElementById(i);
         parent.appendChild(tag);
         mes_length += 1;
