@@ -116,6 +116,9 @@ header{
     padding-left: 5px;
     padding-right: 10px;
 }
+.message_title{
+    display: flex;
+}
 .message_text{
     font-size: large;
 }

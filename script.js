@@ -64,13 +64,29 @@ function display_mes(data, a) {
     tag.innerHTML = data;
     parent.appendChild(tag);
     
-    for (let i = 0; i < a; i++) {
-        tag = document.getElementById("messages");
+    for (let i = 1; i < a+1; i++) {
         tag = document.createElement("div");
         tag.classList.add("messagebox");
         tag.id = i;
-        tag.innerHTML = "username - time";
         parent = document.getElementById("messages");
+        parent.appendChild(tag);
+
+        tag = document.createElement("div");
+        tag.classList.add("message_title");
+        tag.id = -i;
+        parent = document.getElementById(i);
+        parent.appendChild(tag);
+
+        tag = document.createElement("div");
+        tag.classList.add("message_info");
+        tag.innerHTML = "username - time";
+        parent = document.getElementById(-i);
+        parent.appendChild(tag);
+
+        tag = document.createElement("span");
+        tag.classList.add("ping_span");
+        tag.innerHTML = "✖︎";
+        parent = document.getElementById(-i);
         parent.appendChild(tag);
 
         tag = document.createElement("div");
