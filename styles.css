@@ -1,10 +1,10 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: violet;
+    background-color:  #F8F9FA;
 }
 header{
-    background-color: lightgreen;
+    background-color: #DAFFFB;
     width: 100%;
     height: 5vh;
 }
@@ -13,10 +13,10 @@ header{
     width: 100%;
     min-width: 300px;
     height: 95vh;
-    background-color: gold;
+    background-color: #F2FFFD;
 }
 #channel_area{
-    background-color: lightgray;
+    background-color:  #FAFAFA;
     width: 100%;
     max-width: 300px;
     min-width: 300px;
@@ -25,7 +25,7 @@ header{
 }
 #channel_list_title{
     font-size: large;
-    background-color: aliceblue;
+    background-color:  #FFFFFF;
     height: 40px;
     margin-top: 5px;
     margin-bottom: 10px;
@@ -33,9 +33,10 @@ header{
 #channel{
     width: 100%;
     height: 60px;
-    background-color: rgb(98, 98, 255);
+    background-color: #b2ebff;
     margin-bottom: 5px;
 }
+
 .modal {
     display: none; 
     position: fixed;
@@ -61,11 +62,12 @@ header{
     color: red;    
     height: 15px;
 }
-#make_channel_modal{
+#modal_btn{
     width: 200px;
     height: 40px;
     margin-top: 40px;
     margin-right: 60px;
+    background-color: #F6F6F6;
 }
 #channel_title{
     text-align: center;
@@ -91,7 +93,7 @@ header{
 }
 
 #mes_area{
-    background-color: aqua;
+    background-color: #F5F7F9;
     width: 100%;
     max-width: 800px;
     min-width: 500px;
@@ -138,22 +140,23 @@ header{
 }
 
 #clips_area{
-    background-color: yellow;
+    background-color: #F2FFFD;
     width: 100%;
     max-width: 600px;
     min-width: 500px;
     height: auto;
-    margin-left: 5px;
+    margin-left: 10px;
     padding-right: 5px;
 }
 #clipboard{
-    background-color: lightyellow;
+    background-color:  #FFFFFF;
     width: 100%;
     height: 60%;
     text-align: center;
+    border: 1px solid #000000;
 }
 #mybord{
-    background-color: lightyellow;
+    background-color:  #FFFFFF;
     width: 100%;
     height: 40%;
     text-align: center;
@@ -162,4 +165,5 @@ header{
     width: 90%;
     height: 80%;
     font-size: 30px;
+    background-color:  #F6F6F6;
 }
