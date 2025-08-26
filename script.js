@@ -26,11 +26,6 @@ function channel_list(num) {
     }
 }
 
-function close_modal() {
-    document.getElementById("input_channel_name").value = "";
-    document.getElementById("title_error").innerText = ""
-    modal.style.display = "none";
-}
 
 function make_channel(channel_name) {
     if (channel_name) {
@@ -40,7 +35,7 @@ function make_channel(channel_name) {
         const parent = document.getElementById("channel_list");
         tag.setAttribute("onclick", "display_mes_clear(),display_mes(this.innerHTML,10)");
         parent.appendChild(tag);
-        close_modal();
+        close_channel_modal();
     } else {
         document.getElementById("title_error").innerText = "チャンネル名を入力してください";
     }
@@ -68,7 +63,7 @@ function display_mes(data, a) {
     tag.id = "mes_channel_title";
     tag.innerHTML = data;
     parent.appendChild(tag);
-
+    
     for (let i = 0; i < a; i++) {
         tag = document.getElementById("messages");
         tag = document.createElement("div");
@@ -92,23 +87,45 @@ function clipmes(){
 }
 
 
-
-
-
 // 要素を取得
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("make_channel_modal");
-var span = document.getElementsByClassName("close")[0];
+var channel_modal = document.getElementById("channel_modal");
+var channel_btn = document.getElementById("make_channel_modal");
+var channel_span = document.getElementsByClassName("close")[0];
 
-// ボタンをクリックするとモーダルを開く
-btn.onclick = function () {
-    modal.style.display = "block";
+function close_channel_modal() {
+    document.getElementById("input_channel_name").value = "";
+    document.getElementById("title_error").innerText = ""
+    channel_modal.style.display = "none";
 }
-span.onclick = function () {
-    close_modal();
+
+channel_btn.onclick = function () {
+    channel_modal.style.display = "block";
+}
+channel_span.onclick = function () {
+    close_channel_modal();
 }
 window.onclick = function (event) {
-    if (event.target == modal) {
-        close_modal();
+    if (event.target == channel_modal) {
+        close_channel_modal();
+    }
+}
+
+var clip_modal = document.getElementById("clip_modal");
+var clip_btn = document.getElementById("clip_modal_btn");
+var clip_span = document.getElementsByClassName("close")[0];
+
+function close_clip_modal() {
+    clip_modal.style.display = "none";
+}
+
+clip_btn.onclick = function () {
+    clip_modal.style.display = "block";
+}
+clip_span.onclick = function () {
+    close_clip_modal();
+}
+window.onclick = function (event) {
+    if (event.target == clip_modal) {
+        close_clip_modal();
     }
 }

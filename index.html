@@ -13,7 +13,7 @@
     <header>
 
     </header>
-    <div id="myModal" class="modal">
+    <div id="channel_modal" class="modal">
         <div class="modal-content">
             <span class="close">✖︎</span>
             <h1 id="channel_title">チャンネル名を入力</h1>
@@ -21,8 +21,15 @@
             <input type="text" id="input_channel_name" placeholder="チャンネル名を入力">
             <div id="modal_btn_area">
                 <button id="create_channel_btn" onclick="make_channel(input_channel_name.value)">作成</button>
-                <button id="cancel_channel_btn" onclick="close_modal()">キャンセル</button>
+                <button id="cancel_channel_btn" onclick="close_channel_modal()">キャンセル</button>
             </div>
+        </div>
+    </div>
+
+    <div id="clip_modal" class="modal">
+        <div class="modal-content">
+            <span class="close">✖︎</span>
+            <button onclick="close_clip_modal()">aaaa</button>
         </div>
     </div>
 
@@ -32,6 +39,7 @@
                 <div id="channel_list_title">チャンネル一覧</div>
             </div>
             <button id="make_channel_modal">チャンネルを追加</button>
+            <button id="clip_modal_btn">モーダル確認用</button>
         </div>
         <div id="mes_area">
             <div id="your_container">
