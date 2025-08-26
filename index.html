@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body onload=channel_list(0)><!--チャンネルの数を持ってくる-->
+    <header>
+
+    </header>
+    <vid id="main_area">
+        <div id="channel_area">
+            <div id="channel_list">
+                <div id="channel_list_title">チャンネル一覧</div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">✖︎</span>
+                        <h1 id="channel_title">チャンネル名を入力</h1>
+                        <p id="title_error"></p>
+                        <input type="text" id="input_channel_name" placeholder="チャンネル名を入力">
+                        <div id="modal_btn_area">
+                            <button id="create_channel_btn" onclick="make_channel(input_channel_name.value)">作成</button>
+                            <button id="cancel_channel_btn" onclick="close_modal()">キャンセル</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="modal_btn">チャンネルを追加</button>
+        </div>
+        <div id="mes_area">
+            <div id="your_container">
+                <div id="bms_messages_container">
+                    <div id="messages">
+                        <script>display_mes_clear()</script>
+                    </div>
+                    <div id="send_area">
+                        <textarea id="input_area" placeholder="メッセージを入力"></textarea>
+                        <button onclick=sendmess(input_area.value) id="send_btn">送信</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="clips_area">
+            <div id="clipboard">
+                <div>クリップボード</div>
+                <div id="clips"></div>
+            </div>
+            <div id="mybord">
+                <p id="mybord_title">メモ</p>
+                <textarea id="mybord_input" type="text"></textarea>
+        </div>
+    </vid>
+</body>
+
+</html>
